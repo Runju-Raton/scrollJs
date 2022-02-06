@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container" id="container">
+        <div class="row">
+            <div class="col" id="col1" onclick="zoom()">
+                
+            </div>
+            <div class="col" id="col2">
+                
+            </div>
+            <div class="col" id="col3">
+                
+            </div>
+            <div class="col" id="col4">
+                
+            </div>
+        </div>
+    </div>
+    <script>
+        function zoom(){
+            alert('zoom')
+        }
+      /*   $(document).ready(function(){
+            $("#col1" ).click(function() {
+                alert("Hello! I am an alert box!!");
+            });
+        }) */
+        var zoomable=document.getElementById("col1")
+        containerHeight=0;
+        window.addEventListener("wheel", myFunction);
+        function myFunction(e) {
+             containerHeight=containerHeight+e.deltaY;
+        // alert(containerHeight+e.deltaY)
+        row3=document.getElementById("col3")
+        
+        console.log(containerHeight)
+        console.log(row3.offsetTop)
+        if(containerHeight>=row3.offsetTop && containerHeight<=(row3.offsetTop+row3.offsetHeight)){
+            document.getElementById("col3").style.transform="scaleY(1.5)";
+        }
+        else{
+            document.getElementById("col3").style.transform="scale(1)";
+
+        }
+        
+        }
+/* document.getElementById("col2").addEventListener("wheel", myFunction2);
+
+function myFunction2() {
+    document.getElementById("col3").removeEventListener("wheel",myFunction3)
+    document.getElementById("col2").style.transform="scale(1.5)"
+}
+document.getElementById("col3").addEventListener("wheel", myFunction3,true);
+
+function myFunction3() { 
+          document.getElementById("col3").style.transform="scale(1.5)"
+}
+document.getElementById("col3").removeEventListener("wheel",myFunction3)
+document.getElementById("col4").addEventListener("wheel", myFunction4); */
+
+/* function myFunction() {
+    alert('hoise col4')
+  this.style.fontSize = "35px";
+} */
+    </script>
+</body>
+</html>

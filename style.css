@@ -1,0 +1,31 @@
+body{
+    margin:0;
+    padding: 0;
+}
+#col1{
+    background-color: red;
+    width: 100%;
+    height: 300px;
+}
+#col2{
+    background-color: blue;
+    width: 100%;
+    height: 1300px;
+}
+#col3{
+    background-color: cyan;
+    width: 100%;
+    height: 300px;
+}
+#col4{
+    background-color: magenta;
+    width: 100%;
+    height: 300px;
+}
+
+.zoomDiv{
+    background-color: black;
+}
+.col{
+    transition: all 3s ease;
+}
